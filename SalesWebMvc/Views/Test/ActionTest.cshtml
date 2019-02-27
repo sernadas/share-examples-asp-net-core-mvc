@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "ActionTest";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+
+
+Methods to call in Controller:
+<table>
+    <tr>
+        <td>
+            Type
+        </td>
+        <td>
+            Method builder
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            ViewResult
+        </td>
+
+        <td>
+            View
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            PartialViewResult
+        </td>
+        <td>
+            PartialView
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            ContentResult
+        </td>
+
+        <td>
+            Content
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            RedirectResult
+        </td>
+
+        <td>
+            Redirect
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            RedirectToRouteResult
+        </td>
+
+        <td>
+            RedirectToAction
+            <br/>
+            Ex: RedirectToAction("Index", "Home", new { page = 1, sortBy = price} ))
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            JsonResult
+        </td>
+
+        <td>
+            Json
+        </td>
+    </tr>
+    <tr>
+        <td>
+            FileResult
+        </td>
+        <td>
+            File
+        </td>
+    </tr>
+    <tr>
+        <td>
+            HttpNotFoundResult
+        </td>
+        <td>
+            HttpNotFound
+        </td>
+    </tr>
+    <tr>
+        <td>
+            EmptyResult
+        </td>
+        <td>
+            -
+        </td>
+    </tr>
+    
+</table>
