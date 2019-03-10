@@ -28,7 +28,7 @@
 
 </p>
 
-<br/>
+<br />
 
 
 <p>
@@ -163,4 +163,44 @@
         </tr>
 
     </table>
+
+    <br />
+    <br />
+
+
+<p>
+    Install MySQL provider:
+</p>
+
+<ul>
+    <li>
+        Open NuGet Package Manager Console
+    </li>
+    <li>
+        Install-Package Pomelo.EntityFrameworkCore.MySql
+    </li>
+</ul>
+
+
+<br />
+<br />
+
+
+<p>
+    Package Manager Console -> create first Migration:
+    (execute this commands in PM Console)
+</p>
+
+<ul>
+    <li>
+        Add-Migration Initial
+    </li>
+    <li>
+        Update-Database
+    </li>
+</ul>
+
+After this steps, a new folder "Migrations" is created with the first verion of database and this information is syncronized with MySql server automatically.
+We can check if everything is ok, opening MySql Workbench.
+
 </p>
