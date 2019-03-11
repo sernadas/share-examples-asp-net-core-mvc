@@ -244,8 +244,68 @@ We can check if everything is ok, opening MySql Workbench.
 
 
 <p>
-    Create Seeding Service to populate DB Data
-    Create Data\SeedingService.cs class
-    Add this service to Startup.cs\ConfigureServices (ex: services.AddScoped<SeedingService>(); )
+    Create Seeding Service to populate DB Data:
+    <ul>
+        <li>
+            Create Data\SeedingService.cs class (with method seed)
+        </li>
+        <li>
+            Register this service to Startup.cs\ConfigureServices (ex: services.AddScoped<SeedingService>(); )
+        </li>
+        <li>
+            Add service as a parameter of configure method Startup.cs\ConfigureServices (public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService))
+        </li>
+        <li>
+            Call command seedingService.Seed(); in development envoironment to populate DB
+        </li>
 
-    </p>
+    </ul>
+</p>
+
+
+<br />
+<br />
+
+
+<p>
+    Some Satabase commands:
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    Command
+                </td>
+                <td>
+                    Code Example
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Get boolean true if exists any data &nbsp;
+                </td>
+                <td>
+                    _context.Department.Any();
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Insert objet into Database
+                </td>
+                <td>
+                    Department d1 = new Department(1, "Computers");
+                    _context.Department.AddRange(d1, d2, d3, d4);
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Commit transaction to Database
+                </td>
+                <td>
+                    _context.SaveChanges();
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
