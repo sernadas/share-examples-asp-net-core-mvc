@@ -205,3 +205,47 @@ After this steps, a new folder "Migrations" is created with the first verion of 
 We can check if everything is ok, opening MySql Workbench.
 
 </p>
+
+
+<br />
+<br />
+
+
+<p>
+    How to make some changes in the Data Model and Update those differences in Database:
+
+    <ul>
+        <li>
+            Implement domain model
+        </li>
+        <li>
+            Add DbSet's in DbContext
+            (file: Data\SalesWebMvcContext.cs)
+            (ex: add new entity => public DbSet<Seller> Seller { get; set; })
+        </li>
+        <li>
+            Run update commands
+            <ul>
+                <li>
+                    Add-Migration OtherEntities
+                </li>
+                <li>
+                    Update-Database
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+</p>
+
+
+<br />
+<br />
+
+
+<p>
+    Create Seeding Service to populate DB Data
+    Create Data\SeedingService.cs class
+    Add this service to Startup.cs\ConfigureServices (ex: services.AddScoped<SeedingService>(); )
+
+    </p>
