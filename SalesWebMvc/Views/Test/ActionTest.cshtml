@@ -268,16 +268,16 @@ We can check if everything is ok, opening MySql Workbench.
 
 
 <p>
-    Some Satabase commands:
-    <table>
+    Some Database commands:
+    <table class="table table-striped table-hover">
         <thead>
-            <tr>
-                <td>
+            <tr class="success">
+                <th>
                     Command
-                </td>
-                <td>
+                </th>
+                <th>
                     Code Example
-                </td>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -308,4 +308,54 @@ We can check if everything is ok, opening MySql Workbench.
             </tr>
         </tbody>
     </table>
-    
+
+</p>
+
+
+
+<br />
+<br />
+
+
+<p>
+
+    Creating a service:
+
+    <ul>
+        <li>
+            Create Services folder in the Project
+        </li>
+        <li>
+            Create the class of service ex: SellerService.cs
+        </li>
+        <li>
+            Register the service to dependency injection system
+        </li>
+        <li>
+            Implement FindAll method that returns List<Seller> Element
+        </li>
+        <li>
+            Change Controller to call the FindAll method of Service (first the controller has to contain the dependency, this is possible creating a private readonly variable, and set this in the contructor method of Controller)
+        </li>
+        <li>
+            Create a view that show the data received by the controller
+            <br />
+            get data on the view : at model IEnumerable<SalesWebMvc.Models.Seller>
+    <br />
+    write some block codes : at { ViewData["Title"] = "Sellers"; }
+    <br />
+    read a variable : at ViewData["Title"]
+    <br />
+    display column name in HTML: at Html.DisplayNameFor(model => model.Name)
+    <br />
+    process list as a cycle : at foreach (Seller seller in Model)
+    <br />
+    write that data : at Html.DisplayFor(modelItem => seller.Email)
+    <br />
+    Write link to some controller:<a asp-action="Edit" asp-route-id="at seller.Id" asp-controller="Sellers"> Edit</a>
+    <br />
+
+</li>
+    </ul>
+
+    </p>
