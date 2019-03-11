@@ -23,5 +23,20 @@ namespace SalesWebMvc.Controllers
 
             return View(sellers);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost] // this is the way to identify this method as a post method 
+        [ValidateAntiForgeryToken] // to avoid attacks of session capture
+        public IActionResult Create(Seller seller)
+        {
+            _sellerService.Insert(seller);
+            return RedirectToAction(nameof(Index));
+        } 
     }
+
+
 }

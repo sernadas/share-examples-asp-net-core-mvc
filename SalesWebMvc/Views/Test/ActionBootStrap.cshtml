@@ -1,0 +1,85 @@
+﻿@model SalesWebMvc.Models.Seller
+
+@{
+    ViewData["Title"] = "BootStrap Examples";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+
+
+<h4>Form Example</h4>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BirthDate" class="control-label"></label>
+                <input asp-for="BirthDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="BaseSalary" class="control-label"></label>
+                <input asp-for="BaseSalary" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Create" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<hr />
+
+<h4>Table Example</h4>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr class="success">
+            <th>
+                Command
+            </th>
+            <th>
+                Code Example
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                Get boolean true if exists any data &nbsp;
+            </td>
+            <td>
+                _context.Department.Any();
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Insert objet into Database
+            </td>
+            <td>
+                Department d1 = new Department(1, "Computers");
+                _context.Department.AddRange(d1, d2, d3, d4);
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Commit transaction to Database
+            </td>
+            <td>
+                _context.SaveChanges();
+            </td>
+        </tr>
+    </tbody>
+</table>

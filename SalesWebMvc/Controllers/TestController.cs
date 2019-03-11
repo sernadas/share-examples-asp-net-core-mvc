@@ -18,6 +18,11 @@ namespace SalesWebMvc.Controllers
         }
 
 
+        public IActionResult ActionBootStrap()
+        {
+            return View();
+        }
+        
 
     }
 }
