@@ -392,3 +392,19 @@ We can check if everything is ok, opening MySql Workbench.
 
 
 
+<br />
+<br />
+
+
+<h4>
+    Delete Form
+</h4>
+<p>
+    To create a Form to delete, the steps to do it:
+    In SellerService, create FindById and Remove operations
+    In controller, create "Delete" GET action (this method just validate Id is valid)
+    In controller, create "Delete" POST action (saves the information in Database)
+    In View/Sellers/Index, check link to "Delete" action
+    Create delete confirmation view: View/Sellers/Delete (with confirmation data)
+</p>
+
