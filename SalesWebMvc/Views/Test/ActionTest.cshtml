@@ -366,5 +366,9 @@ We can check if everything is ok, opening MySql Workbench.
 
 
 
-
+<p>
+    Using Entity Framework, there is a trick to garantee the Referencial Integrity with Foreign Key not null.
+    It should be created a Property in the Model class, to reference the Parent's Id, using a specific format (ParentId).
+    ex: public int DepartmentId { get; set; }
+</p>
 
