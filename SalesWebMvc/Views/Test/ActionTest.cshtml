@@ -365,10 +365,30 @@ We can check if everything is ok, opening MySql Workbench.
 <br />
 
 
-
+<h4>
+    Entity Framework -> Foreign Key
+</h4>
 <p>
     Using Entity Framework, there is a trick to garantee the Referencial Integrity with Foreign Key not null.
     It should be created a Property in the Model class, to reference the Parent's Id, using a specific format (ParentId).
     ex: public int DepartmentId { get; set; }
 </p>
+
+
+<br />
+<br />
+
+
+<h4>
+    View Models
+</h4>
+<p>
+    Some views are more complex and it need more than one Entity to show data/form.
+    In this cases, it has to be created a ViewModel to group the Related Entities.
+    This new ViewModel is passed by the controller to the view as an argument and it contains the different objets/Entities needed.
+    In this example, I create a new Formulary with Seller and Department information. A list of Departments is mandatory to create a HTML Select Item, and be associated to the Foreign key Seller.DepartmentId.
+    This list of Departments was returned by a method FindAll in the new DepartmentService created.
+</p>
+
+
 
