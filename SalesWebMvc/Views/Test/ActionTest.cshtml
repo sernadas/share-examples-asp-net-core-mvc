@@ -408,3 +408,16 @@ We can check if everything is ok, opening MySql Workbench.
     Create delete confirmation view: View/Sellers/Delete (with confirmation data)
 </p>
 
+
+<br />
+<br />
+
+
+<h4>
+    Eager Loading
+</h4>
+<p>
+    Using Default Entity Framework, when it get from de DB informaion about an Entity, only that Entity is loaded.
+    If it is needed information about other related Entity, it is possible to load that info and get through the instruction "Include".
+    This makes a join, and get info about that related object. Example: return _context.Seller.Include(s => s.Department).FirstOrDefault(s => s.Id == id);
+</p>
