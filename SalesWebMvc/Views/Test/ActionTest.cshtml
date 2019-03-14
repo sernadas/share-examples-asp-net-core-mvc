@@ -436,3 +436,44 @@ We can check if everything is ok, opening MySql Workbench.
     Redirect all of Method errors to Action Error (return RedirectToAction(nameof(Error), new { message = "Id mismatch" });)
 </p>
 
+
+
+
+
+<br />
+<br />
+
+
+<h4>
+    Set App Localization
+</h4>
+<p>
+    using System.Globalization; using Microsoft.AspNetCore.Localization;
+    In Sartup.cs->Configure > create var of type CultureInfo, create new RequestLocalizationOptions (setting DefaultRequestCulture, SupportedCultures and SupportedUICultures options), set appLocalization (app.UseRequestLocalization
+</p>
+
+
+
+
+<br />
+<br />
+
+
+<h4>
+    Customize identifier of a Entity field (visible in HTML)
+</h4>
+<p>
+    Define Column Name: Just have to include an annotation "Display" before the declaration of a variable (ex: [Display(Name = "Birth Date")])
+    Set type of data (ex: set format of a date: [DataType(DataType.Date)])
+    <br />
+    [Display(Name = "Birth Date")]
+    <br />
+    [DataType(DataType.Date)]
+    <br />
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyy}")]
+    <br />
+    public DateTime BirthDate { get; set; }
+    <br />
+</p>
+
+
