@@ -421,3 +421,18 @@ We can check if everything is ok, opening MySql Workbench.
     If it is needed information about other related Entity, it is possible to load that info and get through the instruction "Include".
     This makes a join, and get info about that related object. Example: return _context.Seller.Include(s => s.Department).FirstOrDefault(s => s.Id == id);
 </p>
+
+
+<br />
+<br />
+
+
+<h4>
+    Customize Error Page
+</h4>
+<p>
+    Change class ErrorViewModel to have a string Message property.
+    Create a method Error in Controller with viewModel variable creation (ErrorViewModel viewModel = new ErrorViewModel { Message = message, RequestId=Activity.Current?.Id ?? HttpContext.TraceIdentifier};)
+    Redirect all of Method errors to Action Error (return RedirectToAction(nameof(Error), new { message = "Id mismatch" });)
+</p>
+
