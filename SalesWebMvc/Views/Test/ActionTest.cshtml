@@ -460,7 +460,7 @@ We can check if everything is ok, opening MySql Workbench.
 
 
 <h4>
-    Customize identifier of a Entity field (visible in HTML)
+    VALIDATION - Customize identifier of a Entity field (visible in HTML)
 </h4>
 <p>
     Define Column Name: Just have to include an annotation "Display" before the declaration of a variable (ex: [Display(Name = "Birth Date")])
@@ -474,6 +474,52 @@ We can check if everything is ok, opening MySql Workbench.
     <br />
     public DateTime BirthDate { get; set; }
     <br />
+    <br />
+    [Required(ErrorMessage = "{0} required")]
+    <br />
+    [Display(Name = "Base Salary")]
+    <br />
+    [DisplayFormat(DataFormatString = "{0:F2}")]
+    <br />
+    [Range(100.0,5000.0, ErrorMessage ="{0} must be from {1} and {2}")]
+    <br />
+    public double BaseSalary { get; set; }
+    <br />
+    <br />
+    In the view, there's two commands to show the validation messages to the user:
+    <br />
+    for general validation: div asp-validation-summary="All" class="text-danger"
+    <br />
+    for a specific field: span asp-validation-for="Seller.Email" class="text-danger"
+    <br />
+    (in the end of the view file must include this code)
+    at section Scripts {
+    at  {await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
+
 </p>
+
+<br />
+<br />
+
+
+<h4>
+    VALIDATION - Server side
+</h4>
+<p>
+    If Javascript is not enabled, it is possible to validate with the same rules on the Server side. We have to include validation code in POST methods of controller (Insert / Edit)
+    <br />
+    if (!ModelState.IsValid)
+    <br />
+    {
+    <br />
+    var viewModel = new SellerFormViewModel { Seller = seller, Departments = _departmentService.FindAll() };
+    <br />
+    return View(viewModel);
+    <br />
+    }
+</p>
+
+
 
 
