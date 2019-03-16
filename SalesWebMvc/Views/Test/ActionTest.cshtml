@@ -532,19 +532,19 @@ We can check if everything is ok, opening MySql Workbench.
 </h4>
 <p>
     public List<Department>
-    FindAll ()
-    <br />
-    {
-    <br />
-    return _context.Department.OrderBy(d => d.Name).ToList();
-    <br />
-    }
-    <br />
-    <br />
-    Change to
-    <br />
-    <br />
-    public async Task<List<Department>
+        FindAll ()
+        <br />
+        {
+        <br />
+        return _context.Department.OrderBy(d => d.Name).ToList();
+        <br />
+        }
+        <br />
+        <br />
+        Change to
+        <br />
+        <br />
+        public async Task<List<Department>
     > FindAllAsync ()
     <br />
     {
@@ -553,4 +553,20 @@ We can check if everything is ok, opening MySql Workbench.
     <br />
     }
 </p>
+
+
+
+<br />
+<br />
+
+
+<h4>
+    Catch Integrity exception
+</h4>
+<p>
+    It is good practice, catch exception in the different layers of the application.
+    To catch integrity contraint violation, write code in Service layer (treat DbUpdateException and throw custom exception IntegrityException), and then write code in Controller to catch custom exception IntegrityException.
+</p>
+
+
 

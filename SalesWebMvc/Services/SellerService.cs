@@ -19,14 +19,14 @@ namespace SalesWebMvc.Services
             _context = context;
         }
 
-        public async Task<List<Seller>> FindAllAsync ()
+        public async Task<List<Seller>> FindAllAsync()
         {
             //return _context.Seller.Select(s => s).ToList();
             return await _context.Seller.ToListAsync();
         }
 
-        
-        public async Task InsertAsync (Seller obj)
+
+        public async Task InsertAsync(Seller obj)
         {
             _context.Seller.Add(obj);
             await _context.SaveChangesAsync();
@@ -40,12 +40,19 @@ namespace SalesWebMvc.Services
 
         public async Task RemoveAsync(int id)
         {
-            Seller obj = await _context.Seller.FindAsync(id);
-            _context.Seller.Remove(obj);
-            await _context.SaveChangesAsync();
+            try
+            {
+                Seller obj = await _context.Seller.FindAsync(id);
+                _context.Seller.Remove(obj);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException e)
+            {
+                throw new IntegrityException(e.Message);
+            }
         }
 
-        public async Task UpdateAsync (Seller obj)
+        public async Task UpdateAsync(Seller obj)
         {
             bool hasAny = await _context.Seller.AnyAsync(s => s.Id == obj.Id);
             if (!hasAny)
