@@ -523,3 +523,34 @@ We can check if everything is ok, opening MySql Workbench.
 
 
 
+<br />
+<br />
+
+
+<h4>
+    ASYNC - asynchronous call
+</h4>
+<p>
+    public List<Department>
+    FindAll ()
+    <br />
+    {
+    <br />
+    return _context.Department.OrderBy(d => d.Name).ToList();
+    <br />
+    }
+    <br />
+    <br />
+    Change to
+    <br />
+    <br />
+    public async Task<List<Department>
+    > FindAllAsync ()
+    <br />
+    {
+    <br />
+    return await _context.Department.OrderBy(d => d.Name).ToListAsync();
+    <br />
+    }
+</p>
+
