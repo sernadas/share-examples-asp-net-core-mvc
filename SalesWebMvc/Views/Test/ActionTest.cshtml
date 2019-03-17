@@ -571,3 +571,46 @@ We can check if everything is ok, opening MySql Workbench.
 
 
 
+
+
+<br />
+<br />
+
+
+<h4>
+    Views with Group information
+</h4>
+<p>
+
+    When we do a query to DB, and get group data information, we can pass this info to the View and show it through the following steps:
+    <br />
+    The method of controller returns an IGrouping type (ex: public async Task<List<IGrouping<Department,SalesRecord>
+    >> FindByDateGroupingAsync(DateTime? minDate, DateTime? maxDate) )
+    <br />
+    In the view, go through the two-for cycles (Departments and SalesRecords):
+    <br />
+    at foreach (var departmentGroup in Model)
+    <br />
+    {
+    <br />
+    Department at departmentGroup.Key.Name, Total sales = at departmentGroup.Key.TotalSales(minDate, maxDate).ToString("F2")
+    <br />
+    at foreach (var item in departmentGroup)
+    <br />
+    {
+    <br />
+    at Html.DisplayFor(modelItem => item.Name)
+    <br />
+    }
+    <br />
+    }
+    <br />
+</p>
+
+
+
+
+
+
+    
+        
