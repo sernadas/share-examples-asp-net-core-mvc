@@ -120,3 +120,73 @@
         </form>
     </div>
 </div>
+
+
+
+<hr />
+
+<h4>Other layout of Search</h4>
+
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="minDate">Min Date</label>
+                    <input type="date" class="form-control" name="minDate" value=@ViewData["minDate"] />
+                </div>
+                <div class="form-group">
+                    <label for="maxDate">Max Date</label>
+                    <input type="date" class="form-control" name="maxDate" value=@ViewData["maxDate"] />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Filter</button>
+        </form>
+    </div>
+</nav>
+
+
+
+
+<hr />
+
+<h4>Form with surrounding Panel</h4>
+
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Total sales = 1000</h3>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr class="success">
+                    <th>
+                        Id
+                    </th>
+                    <th>
+                        Seller
+                    </th>
+                    <th>
+                        Amount
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        Antonio
+                    </td>
+                    <td>
+                        1000
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> 
